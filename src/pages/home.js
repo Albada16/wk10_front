@@ -8,17 +8,15 @@ const Home = () => {
   },[])
 
   async function setAllArticle() {
-    const resp = await getAllAriticle()
-    console.log(resp)
-    setArticle(resp)
+    const data = await getAllAriticle()
+    setArticle(data)
   }
     
   return (
     <>
-    <div>Home</div>
     {
       article.map((item)=>(
-        <Card data={item}/>
+        <Card key={item.id} data={item}/>
       ))
     }
     </>   
