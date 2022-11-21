@@ -10,3 +10,12 @@ export const getAllAriticle = async() => {
     console.log(err)
   }
 }
+
+export const getAriticleById = async(id) => {
+  try {
+    const request = await axios.get(`${URL}/api/articles/id/${id}`)
+    return request.data
+  }catch(err) {
+    console.log(err)
+  }
+}
