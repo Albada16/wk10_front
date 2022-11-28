@@ -20,9 +20,7 @@ export default defineConfig({
       optimize: true,
       libList: [
         {
-          libName: 'antd',
-          libDirectory: 'es',
-          style: (name) => `antd/es/${name}/style`
+
         }
       ]
     })
