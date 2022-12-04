@@ -22,11 +22,9 @@ const Detail = ()=> {
 
 	const likeClick = event => {
 		setActiveLike(current => !current)
-		// console.log("123123")
 	}
 	const commClick = event => {
 		setActiveComm(current => !current)
-		// console.log("123123")
 	}
 	
 
