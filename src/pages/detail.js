@@ -56,17 +56,23 @@ const Detail = ()=> {
 						Likes
 							{  detail.article_like.map((item)=>(
 								<div className="like_card" key={item.id}>
-									<div className="like_avatar">{item.like_user.avatar}</div>
-									<div className="like_name">{item.like_user.username}</div>
-									<div className="like_email">{item.like_user.email}</div>
+									<div className="like_card_left">
+									<img className="like_avatar" src={item.like_user.avatar}></img>
+									</div>
+									<div className="like_card_right">
+										<div className="like_name">{item.like_user.username}</div>
+										<div className="like_email">{item.like_user.email}</div>
+									</div>
 								</div>
 								))
 							}
 						</div>
 						<div className={ isActiveComm ? 'active_comm' : 'comm_none'}>
+						Comments
 						{  detail.article_comm.map((item)=>(
 								<div className="comm_card" key={item.id}>
-									{item.comm_user.username}
+									<div className="comm_name">{item.comm_user.username}</div>
+									<div className="comm_content">{item.content}</div>
 								</div>
 								))
 							}
