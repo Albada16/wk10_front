@@ -43,17 +43,34 @@ const Detail = ()=> {
 						<div className="button">
 							<button className="btn like" onClick={likeClick} >
 								<img className="icon like-icon" src={heart}></img>
-								<div className="cont-like">1</div>
+								<div className="cont-like">{detail.article_like.length}</div>
 							</button>
 							<button className="btn comm" onClick={commClick}>
 								<img className="icon comm-icon" alt="" src={comm}></img>
-								<div className="cont-comm">1</div>
+								<div className="cont-comm">{detail.article_comm.length}</div>
 							</button>
 						</div>
 					</div>
 					<div className="right_wrap">
-						<div className={ isActiveLike ? 'active_like' : 'like_none'}>11231231231212312312331223123123123</div>
-						<div className={ isActiveComm ? 'active_comm' : 'comm_none'}>11231231231212312312331223123123123</div>
+						<div className={ isActiveLike ? 'active_like' : 'like_none'}>
+						Likes
+							{  detail.article_like.map((item)=>(
+								<div className="like_card" key={item.id}>
+									<div className="like_avatar">{item.like_user.avatar}</div>
+									<div className="like_name">{item.like_user.username}</div>
+									<div className="like_email">{item.like_user.email}</div>
+								</div>
+								))
+							}
+						</div>
+						<div className={ isActiveComm ? 'active_comm' : 'comm_none'}>
+						{  detail.article_comm.map((item)=>(
+								<div className="comm_card" key={item.id}>
+									{item.comm_user.username}
+								</div>
+								))
+							}
+						</div>
 					</div>
 				</div>
 				: <></>
