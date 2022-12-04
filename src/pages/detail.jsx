@@ -55,7 +55,7 @@ const Detail = ()=> {
 							{  detail.article_like.map((item)=>(
 								<div className="like_card" key={item.id}>
 									<div className="like_card_left">
-									<img className="like_avatar" src={item.like_user.avatar}></img>
+									<img className="like_avatar" src={item.like_user.avatar}>{item.like_user.avatar}</img>
 									</div>
 									<div className="like_card_right">
 										<div className="like_name">{item.like_user.username}</div>
